@@ -16,22 +16,12 @@
 
 To run the project locally, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/YourUserName/W3C-Escrows`
+1. Clone the repository: `git clone https://github.com/web3crafter/dapp-template`
 
-2. `cd` into the `backend` directory and run `npm install`
+2. `cd` into the `frontend` directory and run `npm install`
 
-3. Compile the contracts using `npx hardhat compile`. The artifacts will be placed in the `/artifacts` folder, in the `frontend` which will make it available to the front-end. This path configuration can be found in the `hardhat.config.js` file.
+3. Set up environment variables: `NEXT_PUBLIC_RPC_URL=YOUR_API_KEY`, `NEXT_PUBLIC_SEPOLIA_API_KEY` & `NEXT_PUBLIC_WC_PROJECT_ID`.
 
-4. `cd` into the `frontend` directory and run `npm install`
+4. Run the development server: `npm run dev`
 
-5. Set up environment variables: `NEXT_PUBLIC_RPC_URL=YOUR_API_KEY`, `NEXT_PUBLIC_SEPOLIA_API_KEY` & `NEXT_PUBLIC_WC_PROJECT_ID`.
-
-6. To get access to KV Database you need to `deploy` the project on `Vercel`, create a `db` and `connect` it to your `project` on Vercel.
-
-7. Run the development server: `npm run dev`
-
-8. Open your browser and go to: `http://localhost:3000`
-
-## License
-
-[W3Crafter Escrows](https://github.com/web3crafter/W3C-Escrows) is open-source and released under the [MIT License].
+5. Open your browser and go to: `http://localhost:3000`
