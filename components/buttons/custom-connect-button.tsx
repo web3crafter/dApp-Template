@@ -3,6 +3,7 @@
 import Avatar from "@/components/avatar"
 import { Button, ButtonProps } from "@/components/ui/button"
 import { cn, formatAddress } from "@/lib/utils"
+import { AvatarType } from "@/types/web3"
 import { ConnectButton } from "@rainbow-me/rainbowkit"
 import { ChevronDown } from "lucide-react"
 import Image from "next/image"
@@ -13,6 +14,8 @@ interface CustomConnectButtonProps extends ButtonProps {
   label?: string
   showBalance?: boolean
   chainStatus?: "full" | "icon" | "name" | "none"
+  avatar?: boolean
+  avatarType?: AvatarType
 }
 const CustomConnectButton = ({
   handleModalClose,
@@ -21,6 +24,8 @@ const CustomConnectButton = ({
   showBalance = true,
   chainStatus = "full",
   variant = "default",
+  avatar = false,
+  avatarType = "identicons",
   ...buttonProps
 }: CustomConnectButtonProps) => {
   return (
@@ -98,7 +103,14 @@ const CustomConnectButton = ({
                   }}
                   {...buttonProps}
                 >
-                  <Avatar address={account.address} className="h-5 w-5" />
+                  {avatar && (
+                    <Avatar
+                      address={account.address}
+                      avatarType={avatarType}
+                      className="w-5 h-5"
+                    />
+                  )}
+
                   <p>{account.displayName}</p>
                   {showBalance && account.displayBalance
                     ? ` (${account.displayBalance})`

@@ -18,6 +18,8 @@ const SiteHeader = () => {
               chainStatus="icon"
               showBalance={false}
               variant={"secondary"}
+              avatar={true}
+              avatarType="identicons"
             />
             <Socials />
             <ThemeToggle />
